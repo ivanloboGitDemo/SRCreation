@@ -1,0 +1,7 @@
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Release\RelianceSRCreation.dll.config
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Release\RelianceSRCreation.dll
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Release\RelianceSRCreation.pdb
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Release\RestSharp.dll
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Release\RestSharp.xml
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\obj\Release\RelianceSRCreation.dll
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\obj\Release\RelianceSRCreation.pdb

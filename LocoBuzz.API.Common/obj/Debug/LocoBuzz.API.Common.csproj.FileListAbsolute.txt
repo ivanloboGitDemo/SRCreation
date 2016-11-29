@@ -1,0 +1,16 @@
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\LocoBuzz.API.Common.dll
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\LocoBuzz.API.Common.pdb
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\Newtonsoft.Json.dll
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\RestSharp.dll
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\Newtonsoft.Json.xml
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\RestSharp.xml
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.Common\obj\Debug\LocoBuzz.API.Common.dll
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.Common\obj\Debug\LocoBuzz.API.Common.pdb
+E:\Sustainable\Ivan\LocoBuzz\RelianceSRCreation\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\LocoBuzz.API.Common.dll
+E:\Sustainable\Ivan\LocoBuzz\RelianceSRCreation\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\LocoBuzz.API.Common.pdb
+E:\Sustainable\Ivan\LocoBuzz\RelianceSRCreation\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\Newtonsoft.Json.dll
+E:\Sustainable\Ivan\LocoBuzz\RelianceSRCreation\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\RestSharp.dll
+E:\Sustainable\Ivan\LocoBuzz\RelianceSRCreation\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\Newtonsoft.Json.xml
+E:\Sustainable\Ivan\LocoBuzz\RelianceSRCreation\RelianceSRCreation\LocoBuzz.API.Common\bin\Debug\RestSharp.xml
+E:\Sustainable\Ivan\LocoBuzz\RelianceSRCreation\RelianceSRCreation\LocoBuzz.API.Common\obj\Debug\LocoBuzz.API.Common.dll
+E:\Sustainable\Ivan\LocoBuzz\RelianceSRCreation\RelianceSRCreation\LocoBuzz.API.Common\obj\Debug\LocoBuzz.API.Common.pdb

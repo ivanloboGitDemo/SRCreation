@@ -1,0 +1,7 @@
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.SIMInfo\bin\Debug\LocoBuzz.API.SIMInfo.dll
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.SIMInfo\bin\Debug\LocoBuzz.API.SIMInfo.pdb
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.SIMInfo\bin\Debug\Newtonsoft.Json.dll
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.SIMInfo\bin\Debug\Newtonsoft.Json.xml
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.SIMInfo\obj\Debug\LocoBuzz.API.SIMInfo.csprojResolveAssemblyReference.cache
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.SIMInfo\obj\Debug\LocoBuzz.API.SIMInfo.dll
+D:\Nitin\RelianceSRCreation\LocoBuzz.API.SIMInfo\obj\Debug\LocoBuzz.API.SIMInfo.pdb

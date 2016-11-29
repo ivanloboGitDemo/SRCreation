@@ -1,0 +1,10 @@
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Debug\RelianceSRCreation.dll.config
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Debug\RelianceSRCreation.dll
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Debug\RelianceSRCreation.pdb
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Debug\LocoBuzz.API.Common.dll
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Debug\RestSharp.dll
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Debug\LocoBuzz.API.Common.pdb
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\bin\Debug\RestSharp.xml
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\obj\Debug\RelianceSRCreation.csprojResolveAssemblyReference.cache
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\obj\Debug\RelianceSRCreation.dll
+D:\Nitin\RelianceSRCreation\RelianceSRCreation\obj\Debug\RelianceSRCreation.pdb

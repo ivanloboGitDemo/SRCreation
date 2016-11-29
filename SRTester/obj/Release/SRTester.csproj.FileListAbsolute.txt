@@ -1,0 +1,10 @@
+D:\Nitin\RelianceSRCreation\SRTester\bin\Release\SRTester.exe.config
+D:\Nitin\RelianceSRCreation\SRTester\bin\Release\SRTester.exe
+D:\Nitin\RelianceSRCreation\SRTester\bin\Release\SRTester.pdb
+D:\Nitin\RelianceSRCreation\SRTester\bin\Release\RelianceSRCreation.dll
+D:\Nitin\RelianceSRCreation\SRTester\bin\Release\RelianceSRCreation.pdb
+D:\Nitin\RelianceSRCreation\SRTester\obj\Release\SRTester.csprojResolveAssemblyReference.cache
+D:\Nitin\RelianceSRCreation\SRTester\obj\Release\SRTester.exe
+D:\Nitin\RelianceSRCreation\SRTester\obj\Release\SRTester.pdb
+D:\Nitin\RelianceSRCreation\SRTester\bin\Release\Newtonsoft.Json.dll
+D:\Nitin\RelianceSRCreation\SRTester\bin\Release\Newtonsoft.Json.xml
