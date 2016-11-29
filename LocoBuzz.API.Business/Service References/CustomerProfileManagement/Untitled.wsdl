@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProfileManagement/" xmlns:tns="http://xmlns.example.com/1456987428361" xmlns:ns0="http://www.jio.ril.com/integration/services/inventory/CustomerProfileManagement/" xmlns:ns3="http://www.jio.ril.com/integration/services/inventory/schema/CustomerProfileManagement/" xmlns:ns1="http://www.jio.ril.com/information/DataTypes/CustomerProfileManagement/" name="Untitled" targetNamespace="http://xmlns.example.com/1456987428361" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.jio.ril.com/integration/services/inventory/CustomerProfileManagement/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProfileManagement/" />
+      <xs:import namespace="http://www.jio.ril.com/integration/services/inventory/schema/CustomerProfileManagement/" />
+      <xs:complexType name="InternalExceptionCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="InternalExceptionElement" type="ns2:InternalException" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="createCustomerProfile">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="createCustomerProfileRequest" type="ns3:CreateCustomerProfileRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createCustomerProfileException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="createCustomerProfileResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="createCustomerProfileResponse" type="ns3:CreateCustomerProfileResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findCustomerProfile">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="findCustomerProfileRequest" type="ns3:FindCustomerProfileRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="findCustomerProfileException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="findCustomerProfileResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="findCustomerProfileResponse" type="ns3:FindCustomerProfileResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="issueCustomerProfile">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="customerProfile" type="ns3:CustomerProfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retrieveCustomerProfile">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="retrieveCustomerProfileRequest" type="ns3:RetrieveCustomerProfileRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retrieveCustomerProfileException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="retrieveCustomerProfileResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="retrieveCustomerProfileResponse" type="ns3:RetrieveCustomerProfileResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateCustomerProfile">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="updateCustomerProfileRequest" type="ns3:UpdateCustomerProfileRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateCustomerProfileException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="updateCustomerProfileResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="updateCustomerProfileResponse" type="ns3:UpdateCustomerProfileResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xsd:schema xmlns:xsd_1="http://www.jio.ril.com/information/DataTypes/CustomerProfileManagement/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/information/DataTypes/CustomerProfileManagement/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="AttributeValuePair">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="attributeName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="attributeValue" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TimePeriod">
+        <xsd:annotation>
+          <xsd:documentation>A base / value business entity used to represent a period of time, between two timepoints</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="startDateTime" nillable="true" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>An instant of time, starting at the TimePeriod</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="endDateTime" nillable="true" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>An instant of time, ending at the TimePeriod</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="URI">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="scheme" type="xsd:string" />
+          <xsd:element minOccurs="0" name="schemeSpecificPart" type="xsd:string" />
+          <xsd:element minOccurs="0" name="authority" type="xsd:string" />
+          <xsd:element minOccurs="0" name="userInfo" type="xsd:string" />
+          <xsd:element minOccurs="0" name="host" type="xsd:string" />
+          <xsd:element minOccurs="0" name="port" type="xsd:string" />
+          <xsd:element minOccurs="0" name="path" type="xsd:string" />
+          <xsd:element minOccurs="0" name="query" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fragment" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd_2="http://www.jio.ril.com/information/DataTypes/CustomerProfileManagement/" xmlns:xsd_1="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProfileManagement/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProfileManagement/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.jio.ril.com/information/DataTypes/CustomerProfileManagement/" />
+      <xsd:complexType name="Address">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="validFrom" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="addressId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="buildingId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="leadLocality" type="xsd:string" />
+          <xsd:element minOccurs="0" name="leadBuilding" type="xsd:string" />
+          <xsd:element minOccurs="0" name="subUnitNr" type="xsd:string" />
+          <xsd:element minOccurs="0" name="buildingName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="streetName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="societyName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="landmark" type="xsd:string" />
+          <xsd:element minOccurs="0" name="locality" type="xsd:string" />
+          <xsd:element minOccurs="0" name="subLocality" type="xsd:string" />
+          <xsd:element minOccurs="0" name="postcode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="city" type="xsd:string" />
+          <xsd:element minOccurs="0" name="district" type="xsd:string" />
+          <xsd:element minOccurs="0" name="state" type="xsd:string" />
+          <xsd:element minOccurs="0" name="country" type="xsd:string" />
+          <xsd:element minOccurs="0" name="careOf" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nbFloor" type="xsd:string" />
+          <xsd:element minOccurs="0" name="jioCenterId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="addressType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="wing" type="xsd:string" />
+          <xsd:element minOccurs="0" name="levelNumber" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessInteraction">
+        <xsd:annotation>
+          <xsd:documentation>A BusinessInteraction is an arrangement, contract, communication or joint activity between one or more PartyRoles, ResourceRoles, or CustomerAccounts. A BusinessInteraction may consist of one or more BusinessInteractionItems. A BusinessInteractionItem may refer to a Product, Service, Resource, or one of their specifications. A BusinessInteraction is further defined by one or more Places. One BusinessInteraction may reference another BusinessInteraction and one BusinessInteractionItem may reference another BusinessInteractionItem on the same or different BusinessInteraction. There are five types of BusinessInteractions: Requests, Responses, Notifications, Agreements, and Instructions.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ID" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Unique identifier for Interaction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="interactionDate" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>Date interaction initiated.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="description" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Narrative that explains the interaction and details about the interaction, such as why the interaction is taking place.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="interactionDateComplete" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>The date on which an interaction is closed or completed.
+
+</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="interactionStatus" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>The current condition of an interaction, such as open, in research, closed, and so forth.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="interactionStatusDescription" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>The current condition of an interaction, such as open, in research, closed, and so forth.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DataRecord">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="totalRecords" type="xsd:long" />
+          <xsd:element minOccurs="0" name="timePeriod" type="xsd_2:TimePeriod" />
+          <xsd:element minOccurs="0" name="pagingSize" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="offsetValue" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Error">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="description" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Identifier">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" type="xsd:string" />
+          <xsd:element minOccurs="0" name="subCategory" type="xsd:string" />
+          <xsd:element minOccurs="0" name="context" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>OLD/NEW</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Individual">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="partyId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="partyRole" type="xsd_1:PartyRole" />
+          <xsd:element minOccurs="0" name="name" type="xsd_1:IndividualName" />
+          <xsd:element minOccurs="0" name="relationshipType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="associationName" type="xsd_1:IndividualName" />
+          <xsd:element minOccurs="0" name="dateOfBirth" type="xsd:date">
+            <xsd:annotation>
+              <xsd:documentation>birth date and death date</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="gender" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nationality" type="xsd:string" />
+          <xsd:element minOccurs="0" name="placeOfBirth" type="xsd:string" />
+          <xsd:element minOccurs="0" name="preferredTimeOfCall" type="xsd:string" />
+          <xsd:element minOccurs="0" name="preferredLanguage" type="xsd:string" />
+          <xsd:element minOccurs="0" name="preferredCommunicationChannel" type="xsd:string" />
+          <xsd:element minOccurs="0" name="maritalStatus" type="xsd:string" />
+          <xsd:element minOccurs="0" name="anniversaryDate" nillable="true" type="xsd:date" />
+          <xsd:element minOccurs="0" name="occupation" type="xsd:string" />
+          <xsd:element minOccurs="0" name="occupationDescription" type="xsd:string" />
+          <xsd:element minOccurs="0" name="customerPictureURL" type="xsd_2:URI" />
+          <xsd:element minOccurs="0" name="permanentAddress" type="xsd_1:Address" />
+          <xsd:element minOccurs="0" name="shippingAddress" type="xsd_1:Address" />
+          <xsd:element minOccurs="0" name="mobileNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="emailId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="alternateNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" name="telephoneNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="houseType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ageGroup" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="IndividualIdentification" type="xsd_1:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="PanIdentification" type="xsd_1:PANIdentification" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PartyUser" type="xsd_1:PartyUser" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="characteristics" type="xsd_2:AttributeValuePair" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="segment" type="xsd_2:AttributeValuePair" />
+          <xsd:element minOccurs="0" name="associatedPartyId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="interestCodes" type="xsd:string" />
+          <xsd:element minOccurs="0" name="interestInTrials" type="xsd:string" />
+          <xsd:element minOccurs="0" name="mdmId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="organization" type="xsd_1:Organization" />
+          <xsd:element minOccurs="0" name="customerUpdationDateTime" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="isPreferredCommunicationChannelUpdated" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="jobTitle" type="xsd:string" />
+          <xsd:element minOccurs="0" name="department" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="addresses" type="xsd_1:Address" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IndividualIdentification">
+        <xsd:annotation>
+          <xsd:documentation>Individual Identification represents our registration of information used as proof of identity by an Individual</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="url" type="xsd_2:URI" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" name="number" type="xsd:string" />
+          <xsd:element minOccurs="0" name="issueDate" type="xsd:date">
+            <xsd:annotation>
+              <xsd:documentation>the date that the identification was produced / printed</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="issuingCountry" type="xsd:string" />
+          <xsd:element minOccurs="0" name="issuingAuthority" type="xsd:string" />
+          <xsd:element minOccurs="0" name="validDate" type="xsd:date">
+            <xsd:annotation>
+              <xsd:documentation>the time period that the Party Identification is valid for</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IndividualName">
+        <xsd:annotation>
+          <xsd:documentation>A word, term, or phrase by which an individual is known and distinguished from other individuals.A name is an informal way of identifying an object [Fowler]This entity allows for international naming variations. An IndividualName is a type of PartyName.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="legalName" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Contains, in one string, a fully formatted name with all of its pieces in their proper place. This includes all of the necessary punctuation</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="salutation" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Contains the Salutation,e.g. Mr., Mrs., Hon., Dr.,Major, etc</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="firstName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="middleName" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Middle name(s) or initial(s)</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="lastName" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Contains the non-chosen or inherited name. Also known as a person's last name in the Western context.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="isFirstNameUpdated" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isLastNameUpdated" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:documentation>Contains the non-chosen or inherited name. Also known as a person's last name in the Western context.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InternalException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reason" type="xsd:string" />
+          <xsd:element minOccurs="0" name="code" type="xsd:string" />
+          <xsd:element minOccurs="0" name="details" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Organization">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Unique identifier for Interaction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="partyId" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Unique identifier for Interaction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="type" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Unique identifier for Interaction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PANIdentification">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="number" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lastTaxReturnfiled" type="xsd:string" />
+          <xsd:element minOccurs="0" name="reasonForNoPAN" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyRole">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="partyRoleId" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Unique identifier for PartyRoles</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="validFor" type="xsd_2:TimePeriod" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyUser">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="userId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="displayName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Response">
+        <xsd:annotation>
+          <xsd:documentation>A reply to a Request.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Unique identifier for Interaction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="interactionDate" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>Date interaction initiated.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="description" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Narrative that explains the interaction and details about the interaction, such as why the interaction is taking place.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="interactionStatus" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>The current condition of an interaction, such as open, in research, closed, and so forth.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SalesChannel">
+        <xsd:annotation>
+          <xsd:documentation>A means by which a ServiceProvider makes available and sells ProductOfferings to the market. SalesChannels include DirectSalesForce, SalesAgents, TeleMarketers, and AlternateChannels.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="agentCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="salesOrganization" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="division" type="xsd:string" />
+          <xsd:element minOccurs="0" name="salesGroup" type="xsd:string" />
+          <xsd:element minOccurs="0" name="salesOffice" type="xsd:string" />
+          <xsd:element minOccurs="0" name="merchantCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="merchantPin" type="xsd:string" />
+          <xsd:element minOccurs="0" name="posAgentSignatureDate" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TelephoneNumber">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="number" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" name="routingNumber" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd_2="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProfileManagement/" xmlns:xsd_1="http://www.jio.ril.com/integration/services/inventory/schema/CustomerProfileManagement/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/integration/services/inventory/schema/CustomerProfileManagement/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProfileManagement/" />
+      <xsd:complexType name="CreateCustomerProfileRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="prospect" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="passportIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="visaIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="panIdentification" type="xsd_2:PANIdentification" />
+          <xsd:element minOccurs="0" name="aadharIdentification" type="xsd_2:IndividualIdentification" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CreateCustomerProfileResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerProfile">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="prospect" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="isMobileNumberUpdated" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isEmailUpdated" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="passportIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="visaIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="panIdentification" type="xsd_2:PANIdentification" />
+          <xsd:element minOccurs="0" name="aadharIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="businessInteraction" type="xsd_2:BusinessInteraction" />
+          <xsd:element minOccurs="0" name="salesChannel" type="xsd_2:SalesChannel" />
+          <xsd:element minOccurs="0" name="lastUpdatedDate" type="xsd:date" />
+          <xsd:element minOccurs="0" name="creationDate" type="xsd:date" />
+          <xsd:element minOccurs="0" name="action" type="xsd:string" />
+          <xsd:element minOccurs="0" name="response" type="xsd_2:BusinessInteraction" />
+          <xsd:element minOccurs="0" name="transactionRefNo" type="xsd:string" />
+          <xsd:element minOccurs="0" name="preferredAgent1" type="xsd:string" />
+          <xsd:element minOccurs="0" name="preferredAgent2" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FindCustomerProfileRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="dataRecord" type="xsd_2:DataRecord" />
+          <xsd:element minOccurs="0" name="panIdentification" type="xsd_2:PANIdentification" />
+          <xsd:element minOccurs="0" name="aadharIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="context" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FindCustomerProfileResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="dataRecord" type="xsd_2:DataRecord" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RetrieveCustomerProfileRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="serviceId" type="xsd_2:Identifier" />
+          <xsd:element minOccurs="0" name="technicalId" type="xsd_2:Identifier" />
+          <xsd:element minOccurs="0" name="callingPartyNumber" type="xsd_2:TelephoneNumber" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RetrieveCustomerProfileResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="passportIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="visaIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="panIdentification" type="xsd_2:PANIdentification" />
+          <xsd:element minOccurs="0" name="aadharIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="response" type="xsd_2:Response" />
+          <xsd:element minOccurs="0" name="error" type="xsd_2:Error" />
+          <xsd:element minOccurs="0" name="preferredAgent1" type="xsd:string" />
+          <xsd:element minOccurs="0" name="preferredAgent2" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCustomerProfileRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="passportIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="visaIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="panIdentification" type="xsd_2:PANIdentification" />
+          <xsd:element minOccurs="0" name="aadharIdentification" type="xsd_2:IndividualIdentification" />
+          <xsd:element minOccurs="0" name="isMobileNumberUpdated" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isEmailUpdated" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="salesChannel" type="xsd_2:SalesChannel" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateCustomerProfileResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="businessInteraction" type="xsd_2:BusinessInteraction" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CustomerProfile" type="xsd_1:CustomerProfile" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="retrieveCustomerProfileRequest">
+    <wsdl:part name="parameters" element="ns0:retrieveCustomerProfile" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCustomerProfileResponse">
+    <wsdl:part name="parameters" element="ns0:retrieveCustomerProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCustomerProfileException">
+    <wsdl:part name="retrieveCustomerProfileException" element="ns0:retrieveCustomerProfileException" />
+  </wsdl:message>
+  <wsdl:message name="createCustomerProfileRequest">
+    <wsdl:part name="parameters" element="ns0:createCustomerProfile" />
+  </wsdl:message>
+  <wsdl:message name="createCustomerProfileResponse">
+    <wsdl:part name="parameters" element="ns0:createCustomerProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="createCustomerProfileException">
+    <wsdl:part name="createCustomerProfileException" element="ns0:createCustomerProfileException" />
+  </wsdl:message>
+  <wsdl:message name="issueCustomerProfileRequest">
+    <wsdl:part name="parameters" element="ns0:issueCustomerProfile" />
+  </wsdl:message>
+  <wsdl:message name="updateCustomerProfileRequest">
+    <wsdl:part name="parameters" element="ns0:updateCustomerProfile" />
+  </wsdl:message>
+  <wsdl:message name="updateCustomerProfileResponse">
+    <wsdl:part name="parameters" element="ns0:updateCustomerProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCustomerProfileException">
+    <wsdl:part name="updateCustomerProfileException" element="ns0:updateCustomerProfileException" />
+  </wsdl:message>
+  <wsdl:message name="findCustomerProfileRequest">
+    <wsdl:part name="parameters" element="ns0:findCustomerProfile" />
+  </wsdl:message>
+  <wsdl:message name="findCustomerProfileResponse">
+    <wsdl:part name="parameters" element="ns0:findCustomerProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="findCustomerProfileException">
+    <wsdl:part name="findCustomerProfileException" element="ns0:findCustomerProfileException" />
+  </wsdl:message>
+  <wsdl:portType name="CustomerProfileManagementV3dot8">
+    <wsdl:operation name="retrieveCustomerProfile">
+      <wsdl:input message="tns:retrieveCustomerProfileRequest" />
+      <wsdl:output message="tns:retrieveCustomerProfileResponse" />
+      <wsdl:fault name="retrieveCustomerProfileException" message="tns:retrieveCustomerProfileException" />
+    </wsdl:operation>
+    <wsdl:operation name="createCustomerProfile">
+      <wsdl:input message="tns:createCustomerProfileRequest" />
+      <wsdl:output message="tns:createCustomerProfileResponse" />
+      <wsdl:fault name="createCustomerProfileException" message="tns:createCustomerProfileException" />
+    </wsdl:operation>
+    <wsdl:operation name="issueCustomerProfile">
+      <wsdl:input message="tns:issueCustomerProfileRequest" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomerProfile">
+      <wsdl:input message="tns:updateCustomerProfileRequest" />
+      <wsdl:output message="tns:updateCustomerProfileResponse" />
+      <wsdl:fault name="updateCustomerProfileException" message="tns:updateCustomerProfileException" />
+    </wsdl:operation>
+    <wsdl:operation name="findCustomerProfile">
+      <wsdl:input message="tns:findCustomerProfileRequest" />
+      <wsdl:output message="tns:findCustomerProfileResponse" />
+      <wsdl:fault name="findCustomerProfileException" message="tns:findCustomerProfileException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerProfileManagementV3dot8Endpoint0Binding" type="tns:CustomerProfileManagementV3dot8">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="retrieveCustomerProfile">
+      <soap:operation soapAction="/retrieveCustomerProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="retrieveCustomerProfileException">
+        <soap:fault use="literal" name="retrieveCustomerProfileException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createCustomerProfile">
+      <soap:operation soapAction="/TestHarness/CustomerProfileManagementV3.8/CustomerProfileManagementV3dot8-service0.serviceagent/CustomerProfileManagementV3dot8Endpoint0/createCustomerProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="createCustomerProfileException">
+        <soap:fault use="literal" name="createCustomerProfileException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="issueCustomerProfile">
+      <soap:operation soapAction="/TestHarness/CustomerProfileManagementV3.8/CustomerProfileManagementV3dot8-service0.serviceagent/CustomerProfileManagementV3dot8Endpoint0/issueCustomerProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomerProfile">
+      <soap:operation soapAction="/updateCustomerProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="updateCustomerProfileException">
+        <soap:fault use="literal" name="updateCustomerProfileException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findCustomerProfile">
+      <soap:operation soapAction="/findCustomerProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="findCustomerProfileException">
+        <soap:fault use="literal" name="findCustomerProfileException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerProfileManagementV3dot8-service0">
+    <wsdl:port name="CustomerProfileManagementV3dot8Endpoint0" binding="tns:CustomerProfileManagementV3dot8Endpoint0Binding">
+      <soap:address location="http://localhost:10098/CustomerProfileManagement3dot6" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

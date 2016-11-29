@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.jio.ril.com/integration/services/assurance/schema/CustomerProblemManagement/" xmlns:tns="http://xmlns.example.com/1376128967720" xmlns:ns0="http://www.jio.ril.com/integration/services/assurance/CustomerProblemManagement/" xmlns:ns3="http://www.jio.ril.com/information/DataTypes/CustomerProblemManagement/" xmlns:ns1="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProblemManagement/" name="Untitled" targetNamespace="http://xmlns.example.com/1376128967720" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd_2="http://www.jio.ril.com/information/DataTypes/CustomerProblemManagement/" xmlns:xsd_1="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProblemManagement/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProblemManagement/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.jio.ril.com/information/DataTypes/CustomerProblemManagement/" />
+      <xsd:complexType name="Address">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="city" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessInteraction">
+        <xsd:annotation>
+          <xsd:documentation>A BusinessInteraction is an arrangement, contract, communication or joint activity between one or more PartyRoles, ResourceRoles, or CustomerAccounts. A BusinessInteraction may consist of one or more BusinessInteractionItems. A BusinessInteractionItem may refer to a Product, Service, Resource, or one of their specifications. A BusinessInteraction is further defined by one or more Places. One BusinessInteraction may reference another BusinessInteraction and one BusinessInteractionItem may reference another BusinessInteractionItem on the same or different BusinessInteraction. There are five types of BusinessInteractions: Requests, Responses, Notifications, Agreements, and Instructions.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="description" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Narrative that explains the interaction and details about the interaction, such as why the interaction is taking place.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="interactionStatusDescription" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>The current condition of an interaction, such as open, in research, closed, and so forth.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerAccount">
+        <xsd:annotation>
+          <xsd:documentation>An arrangement that a customer has with an enterprise that provides products to the customer.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="accountID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerProblem">
+        <xsd:annotation>
+          <xsd:documentation>Represents a problem which affects the Customer experience. CustomerProblem can be raised by the Customer (a complaint) or by the CSP (typically through some analytics system)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="problemId" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Identifier of the problem. Note that this identifier is local to the server side of the interface. 
+Only EntityIdentifier can be considered as global.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="description" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="category" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="reason" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free text or optionally structured text. It can be Unknown. The Why category of the ATIS Service Outage document can be used to fill this value.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="subCategory" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="referenceNumber" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free text or optionally structured text. It can be Unknown. The Why category of the ATIS Service Outage document can be used to fill this value.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="statusDescription" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Identifier of the problem. Note that this identifier is local to the server side of the interface. 
+Only EntityIdentifier can be considered as global.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="activityStatus" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="timeRaised" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>Free text or optionally structured text. It can be Unknown. The Why category of the ATIS Service Outage document can be used to fill this value.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="subSubCategory" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="subCategoryDescription" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="categoryDescription" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="subSubCategoryDescription" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="estimatedResolutionTime" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="impact" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="impactImportanceFactor" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="comment" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="originatingSystem" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free form text describing the Service Problem.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="priority" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="responsibleParty" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free text or optionally structured text. It can be Unknown. The Why category of the ATIS Service Outage document can be used to fill this value.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="timeChanged" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>Identifier of the problem. Note that this identifier is local to the server side of the interface. 
+Only EntityIdentifier can be considered as global.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="action" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="identifier" type="xsd_1:Identifier">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="salesChannel" type="xsd_1:SalesChannel">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="product" type="xsd_1:Product">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="TroubleTicket" type="xsd_1:TroubleTicket" />
+          <xsd:element minOccurs="0" name="Customer" type="xsd_1:Individual" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="orderReferenceNumber" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>classifier for the problem. Settable. Structured text/ enum.
+In the ATIS Service Outage document, the What Category
+corresponds to this attribute and the values can be used as possible values.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="resolutionCode" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Free text or optionally structured text. It can be Unknown. The Why category of the ATIS Service Outage document can be used to fill this value.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DataRecord">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="totalRecords" type="xsd:long" />
+          <xsd:element minOccurs="0" name="timePeriod" type="xsd_2:TimePeriod" />
+          <xsd:element minOccurs="0" name="pagingSize" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="offsetValue" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EmailContact">
+        <xsd:annotation>
+          <xsd:documentation>The eMail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="eMailAddress" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>full e-mail address in standard format</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Identifier">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Individual">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="partyId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CustomerAccount" type="xsd_1:CustomerAccount" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InternalException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reason" type="xsd:string" />
+          <xsd:element minOccurs="0" name="code" type="xsd:string" />
+          <xsd:element minOccurs="0" name="details" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Product">
+        <xsd:annotation>
+          <xsd:documentation>A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SalesChannel">
+        <xsd:annotation>
+          <xsd:documentation>A means by which a ServiceProvider makes available and sells ProductOfferings to the market. SalesChannels include DirectSalesForce, SalesAgents, TeleMarketers, and AlternateChannels.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="agentCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ServiceLevelAgreement">
+        <xsd:annotation>
+          <xsd:documentation>A service level agreement (SLA) is a type of agreement that represents a formal negotiated agreement between two parties designed to create a common understanding about products, services, priorities, responsibilities, and so forth. The SLA is a set of appropriate procedures and targets formally or informally agreed between parties in order to achieve and maintain specified Quality of Service.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="resolutionTime" type="xsd:string" />
+          <xsd:element minOccurs="0" name="slaLevel" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Unique identifier for Interaction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TelephoneNumber">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="number" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Time">
+        <xsd:annotation>
+          <xsd:documentation>This represents all possible cases of time slabs and time instances.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="timeZone" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TroubleTicket">
+        <xsd:annotation>
+          <xsd:documentation>A record used for reporting and managing the resolution of resource problems.
+
+
+</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="serviceRestoredDate" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.jio.ril.com/integration/services/assurance/CustomerProblemManagement/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProblemManagement/" />
+      <xs:import namespace="http://www.jio.ril.com/integration/services/assurance/schema/CustomerProblemManagement/" />
+      <xs:complexType name="InternalExceptionCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="InternalExceptionElement" type="ns1:InternalException" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CreateCustomerProblemException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="createCustomerProblem">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="CreateCustomerProblemRequest" type="ns2:CreateCustomerProblemRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createCustomerProblemResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="CreateCustomerProblemResponse" type="ns2:CreateCustomerProblemResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="issueCustomerProblem">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="issueCustomerProblem" type="ns2:IssueCustomerProblem" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listCustomerProblem">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="listCustomerProblemRequest" type="ns2:listCustomerProblemRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="listCustomerProblemException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="listCustomerProblemResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="listCustomerProblemResponse" type="ns2:listCustomerProblemResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retrieveCustomerProblem">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="retrieveCustomerProblemRequest" type="ns2:retrieveCustomerProblemRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retrieveCustomerProblemException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="retrieveCustomerProblemResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="retrieveCustomerProblemResponse" type="ns2:retrieveCustomerProblemResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateCustomerProblem">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="updateCustomerProblemRequest" type="ns2:updateCustomerProblemRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateCustomerProblemException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="updateCustomerProblemResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="updateCustomerProblemResponse" type="ns2:updateCustomerProblemResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xsd:schema xmlns:xsd_2="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProblemManagement/" xmlns:xsd_1="http://www.jio.ril.com/integration/services/assurance/schema/CustomerProblemManagement/" xmlns:xsd_3="http://www.jio.ril.com/information/DataTypes/CustomerProblemManagement/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/integration/services/assurance/schema/CustomerProblemManagement/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.jio.ril.com/information/DataTypes/CustomerProblemManagement/" />
+      <xsd:import namespace="http://www.jio.ril.com/information/CanonicalDataModel/CustomerProblemManagement/" />
+      <xsd:complexType name="CreateCustomerProblemRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="identifier" type="xsd_2:Identifier" />
+          <xsd:element minOccurs="0" name="salesChannel" type="xsd_2:SalesChannel" />
+          <xsd:element minOccurs="0" name="product" type="xsd_2:Product" />
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="customerProblem" type="xsd_2:CustomerProblem" />
+          <xsd:element minOccurs="0" name="troubleTicket" type="xsd_2:TroubleTicket" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CreateCustomerProblemResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customerProblem" type="xsd_2:CustomerProblem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IssueCustomerProblem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="identifier" type="xsd_2:Identifier" />
+          <xsd:element minOccurs="0" name="mobileNumber" type="xsd_2:TelephoneNumber" />
+          <xsd:element minOccurs="0" name="address" type="xsd_2:Address" />
+          <xsd:element minOccurs="0" name="timeZone" type="xsd_2:Time" />
+          <xsd:element minOccurs="0" name="product" type="xsd_2:Product" />
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" name="customerProblem" type="xsd_2:CustomerProblem" />
+          <xsd:element minOccurs="0" name="troubleTicket" type="xsd_2:TroubleTicket" />
+          <xsd:element minOccurs="0" name="serviceProfile" type="xsd:string" />
+          <xsd:element minOccurs="0" name="responseProfile" type="xsd:string" />
+          <xsd:element minOccurs="0" name="resolutionCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="closeLoop" type="xsd:string" />
+          <xsd:element minOccurs="0" name="turnAroundTime" type="xsd:string" />
+          <xsd:element minOccurs="0" name="customerAccount" type="xsd_2:CustomerAccount" />
+          <xsd:element minOccurs="0" name="outboundCallRequired" type="xsd:string" />
+          <xsd:element minOccurs="0" name="hpsmTTId" type="xsd_2:TroubleTicket" />
+          <xsd:element minOccurs="0" name="zoneCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="emailContact" type="xsd_2:EmailContact" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="listCustomerProblemRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="customerProblem" type="xsd_2:CustomerProblem" />
+          <xsd:element minOccurs="0" name="dataRecord" type="xsd_2:DataRecord" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="listCustomerProblemResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="customerProblem" type="xsd_2:CustomerProblem" />
+          <xsd:element minOccurs="0" name="dataRecord" type="xsd_2:DataRecord" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="retrieveCustomerProblemRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="businessInteraction" type="xsd_2:BusinessInteraction" />
+          <xsd:element minOccurs="0" name="customerProblem" type="xsd_2:CustomerProblem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="retrieveCustomerProblemResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customerProblem" type="xsd_2:CustomerProblem" />
+          <xsd:element minOccurs="0" name="businessInteraction" type="xsd_2:BusinessInteraction" />
+          <xsd:element minOccurs="0" name="characteristics" type="xsd_3:AttributeValuePair" />
+          <xsd:element minOccurs="0" name="resolutionCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="slaCloseLoop" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignedToTeam" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="sla" type="xsd_2:ServiceLevelAgreement" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="updateCustomerProblemRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customerProblem" type="xsd_2:CustomerProblem" />
+          <xsd:element minOccurs="0" name="url" type="xsd_3:URI" />
+          <xsd:element minOccurs="0" name="salesChannel" type="xsd_2:SalesChannel" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="updateCustomerProblemResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customerProblem" type="xsd_2:CustomerProblem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="IssueCustomerProblem" type="xsd_1:IssueCustomerProblem" />
+    </xsd:schema>
+    <xsd:schema xmlns:xsd_1="http://www.jio.ril.com/information/DataTypes/CustomerProblemManagement/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/information/DataTypes/CustomerProblemManagement/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="AttributeValuePair">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="attributeName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="attributeValue" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TimePeriod">
+        <xsd:annotation>
+          <xsd:documentation>A base / value business entity used to represent a period of time, between two timepoints</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="startDateTime" nillable="true" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>An instant of time, starting at the TimePeriod</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="endDateTime" nillable="true" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>An instant of time, ending at the TimePeriod</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="URI">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="scheme" type="xsd:string" />
+          <xsd:element minOccurs="0" name="schemeSpecificPart" type="xsd:string" />
+          <xsd:element minOccurs="0" name="authority" type="xsd:string" />
+          <xsd:element minOccurs="0" name="userInfo" type="xsd:string" />
+          <xsd:element minOccurs="0" name="host" type="xsd:string" />
+          <xsd:element minOccurs="0" name="port" type="xsd:string" />
+          <xsd:element minOccurs="0" name="path" type="xsd:string" />
+          <xsd:element minOccurs="0" name="query" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fragment" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createCustomerProblemRequest">
+    <wsdl:part name="parameters" element="ns0:createCustomerProblem" />
+  </wsdl:message>
+  <wsdl:message name="createCustomerProblemResponse">
+    <wsdl:part name="parameters" element="ns0:createCustomerProblemResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateCustomerProblemException">
+    <wsdl:part name="CreateCustomerProblemException" element="ns0:CreateCustomerProblemException" />
+  </wsdl:message>
+  <wsdl:message name="listCustomerProblemRequest">
+    <wsdl:part name="parameters" element="ns0:listCustomerProblem" />
+  </wsdl:message>
+  <wsdl:message name="listCustomerProblemResponse">
+    <wsdl:part name="parameters" element="ns0:listCustomerProblemResponse" />
+  </wsdl:message>
+  <wsdl:message name="listCustomerProblemException">
+    <wsdl:part name="listCustomerProblemException" element="ns0:listCustomerProblemException" />
+  </wsdl:message>
+  <wsdl:message name="issueCustomerProblemRequest">
+    <wsdl:part name="parameters" element="ns0:issueCustomerProblem" />
+  </wsdl:message>
+  <wsdl:message name="updateCustomerProblemRequest">
+    <wsdl:part name="parameters" element="ns0:updateCustomerProblem" />
+  </wsdl:message>
+  <wsdl:message name="updateCustomerProblemResponse">
+    <wsdl:part name="parameters" element="ns0:updateCustomerProblemResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCustomerProblemException">
+    <wsdl:part name="updateCustomerProblemException" element="ns0:updateCustomerProblemException" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCustomerProblemRequest">
+    <wsdl:part name="parameters" element="ns0:retrieveCustomerProblem" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCustomerProblemResponse">
+    <wsdl:part name="parameters" element="ns0:retrieveCustomerProblemResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCustomerProblemException">
+    <wsdl:part name="retrieveCustomerProblemException" element="ns0:retrieveCustomerProblemException" />
+  </wsdl:message>
+  <wsdl:portType name="CustomerProblemManagementV2dot5">
+    <wsdl:operation name="createCustomerProblem">
+      <wsdl:input message="tns:createCustomerProblemRequest" />
+      <wsdl:output message="tns:createCustomerProblemResponse" />
+      <wsdl:fault name="CreateCustomerProblemException" message="tns:CreateCustomerProblemException" />
+    </wsdl:operation>
+    <wsdl:operation name="listCustomerProblem">
+      <wsdl:input message="tns:listCustomerProblemRequest" />
+      <wsdl:output message="tns:listCustomerProblemResponse" />
+      <wsdl:fault name="listCustomerProblemException" message="tns:listCustomerProblemException" />
+    </wsdl:operation>
+    <wsdl:operation name="issueCustomerProblem">
+      <wsdl:input message="tns:issueCustomerProblemRequest" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomerProblem">
+      <wsdl:input message="tns:updateCustomerProblemRequest" />
+      <wsdl:output message="tns:updateCustomerProblemResponse" />
+      <wsdl:fault name="updateCustomerProblemException" message="tns:updateCustomerProblemException" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveCustomerProblem">
+      <wsdl:input message="tns:retrieveCustomerProblemRequest" />
+      <wsdl:output message="tns:retrieveCustomerProblemResponse" />
+      <wsdl:fault name="retrieveCustomerProblemException" message="tns:retrieveCustomerProblemException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerProblemManagementV2dot5Endpoint1Binding" type="tns:CustomerProblemManagementV2dot5">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createCustomerProblem">
+      <soap:operation soapAction="/createCustomerProblem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="CreateCustomerProblemException">
+        <soap:fault use="literal" name="CreateCustomerProblemException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listCustomerProblem">
+      <soap:operation soapAction="/listCustomerProblems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="listCustomerProblemException">
+        <soap:fault use="literal" name="listCustomerProblemException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="issueCustomerProblem">
+      <soap:operation soapAction="/issueCustomerProblem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomerProblem">
+      <soap:operation soapAction="/updateCustomerProblem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="updateCustomerProblemException">
+        <soap:fault use="literal" name="updateCustomerProblemException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveCustomerProblem">
+      <soap:operation soapAction="/retrieveCustomerProblem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="retrieveCustomerProblemException">
+        <soap:fault use="literal" name="retrieveCustomerProblemException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerProblemManagement">
+    <wsdl:port name="CustomerProblemManagementV2dot5Endpoint1" binding="tns:CustomerProblemManagementV2dot5Endpoint1Binding">
+      <soap:address location="http://10.128.36.200:10084/CustomerProblemManagementV2dot5Endpoint1" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

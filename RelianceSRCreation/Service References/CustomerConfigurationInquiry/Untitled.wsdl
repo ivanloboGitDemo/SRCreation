@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.jio.ril.com/integration/services/common/schema/CustomerConfigurationInquiryConcrete/" xmlns:tns="http://xmlns.example.com/1453102354381" xmlns:ns0="http://www.jio.ril.com/integration/services/common/CustomerConfigurationInquiry/" xmlns:ns3="http://www.jio.ril.com/information/CanonicalDataModel/CustomerConfigurationInquiry/" xmlns:ns1="http://www.jio.ril.com/information/DataTypes/CustomerConfigurationInquiry/" name="Untitled" targetNamespace="http://xmlns.example.com/1453102354381" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd_1="http://www.jio.ril.com/information/DataTypes/CustomerConfigurationInquiry/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/information/DataTypes/CustomerConfigurationInquiry/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="AttributeValuePair">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="attributeName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="attributeValue" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.jio.ril.com/integration/services/common/CustomerConfigurationInquiry/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.jio.ril.com/information/CanonicalDataModel/CustomerConfigurationInquiry/" />
+      <xs:import namespace="http://www.jio.ril.com/integration/services/common/schema/CustomerConfigurationInquiryConcrete/" />
+      <xs:complexType name="InternalExceptionCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="InternalExceptionElement" type="ns3:InternalException" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="retrieveCustomerServiceConfiguration">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="retrieveCustomerServiceConfigurationRequest" type="ns2:RetrieveCustomerServiceConfigurationRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retrieveCustomerServiceConfigurationException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="retrieveCustomerServiceConfigurationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="retrieveCustomerServiceConfigurationResponse" type="ns2:RetrieveCustomerServiceConfigurationResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retrieveDigitalServiceConfiguration">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="retrieveDigitalServiceConfigurationRequest" type="ns2:RetrieveDigitalServiceConfigurationRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="retrieveDigitalServiceConfigurationException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="retrieveDigitalServiceConfigurationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" form="unqualified" name="retrieveDigitalServiceConfigurationResponse" type="ns2:RetrieveDigitalServiceConfigurationResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xsd:schema xmlns:xsd_2="http://www.jio.ril.com/information/CanonicalDataModel/CustomerConfigurationInquiry/" xmlns:xsd_1="http://www.jio.ril.com/integration/services/common/schema/CustomerConfigurationInquiryConcrete/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/integration/services/common/schema/CustomerConfigurationInquiryConcrete/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.jio.ril.com/information/CanonicalDataModel/CustomerConfigurationInquiry/" />
+      <xsd:complexType name="RetrieveCustomerServiceConfigurationRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="service" type="xsd_2:Service" />
+          <xsd:element minOccurs="0" name="salesChannel" type="xsd_2:SalesChannel" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="identifier" type="xsd_2:Identifier" />
+          <xsd:element minOccurs="0" name="includeAllServices" type="xsd:string" />
+          <xsd:element minOccurs="0" name="filterKey" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RetrieveCustomerServiceConfigurationResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RetrieveDigitalServiceConfigurationRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="partyUser" type="xsd_2:PartyUser" />
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="service" type="xsd_2:Service" />
+          <xsd:element minOccurs="0" name="filter" type="xsd:string" />
+          <xsd:element minOccurs="0" name="customerBill" type="xsd_2:CustomerBill" />
+          <xsd:element minOccurs="0" name="identifier" type="xsd_2:Identifier" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RetrieveDigitalServiceConfigurationResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="xsd_2:Individual" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="service" type="xsd_2:Service" />
+          <xsd:element minOccurs="0" name="partyUser" type="xsd_2:PartyUser" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd_2="http://www.jio.ril.com/information/DataTypes/CustomerConfigurationInquiry/" xmlns:xsd_1="http://www.jio.ril.com/information/CanonicalDataModel/CustomerConfigurationInquiry/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/information/CanonicalDataModel/CustomerConfigurationInquiry/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.jio.ril.com/information/DataTypes/CustomerConfigurationInquiry/" />
+      <xsd:complexType name="BusinessInteractionType">
+        <xsd:annotation>
+          <xsd:documentation>The possible types of BusinessInteractions that can occur. BusinessInteractionTypes can be with the associated BusinessParticipantTypes that can participate in a BusinessInteraction.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ID" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Catalog ID</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="name" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>The name of an Interaction Type, such as Customer Inquiry, Customer Quote/Offer, Trouble Report.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="description" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>A brief narrative that describes an Interaction Type.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerAccount">
+        <xsd:annotation>
+          <xsd:documentation>An arrangement that a customer has with an enterprise that provides products to the customer.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="accountType" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>A categorization of an account, such as individual, joint, and so forth, whose instances share some of the same characteristics.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="companyCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="circleId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="postpaidAccountId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="accountID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="subscriptionType" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Prepaid /Post Paid</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="xsd_1:Identifier" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerBill">
+        <xsd:annotation>
+          <xsd:documentation>A total amount due from a CustomerAccount for all products during the billing period.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="billingType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Identifier">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" type="xsd:string" />
+          <xsd:element minOccurs="0" name="subCategory" type="xsd:string" />
+          <xsd:element minOccurs="0" name="category" type="xsd:string" />
+          <xsd:element minOccurs="0" name="context" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>OLD/NEW</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Individual">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="partyId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CustomerAccount" type="xsd_1:CustomerAccount" />
+          <xsd:element minOccurs="0" name="emailId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="telephoneNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd_1:IndividualName" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Product" type="xsd_1:Product" />
+          <xsd:element minOccurs="0" name="preferredCommunicationChannel" type="xsd:string" />
+          <xsd:element minOccurs="0" name="preferredLanguage" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="segment" type="xsd_2:AttributeValuePair" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IndividualName">
+        <xsd:annotation>
+          <xsd:documentation>A word, term, or phrase by which an individual is known and distinguished from other individuals.A name is an informal way of identifying an object [Fowler]This entity allows for international naming variations. An IndividualName is a type of PartyName.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="salutation" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Contains the Salutation,e.g. Mr., Mrs., Hon., Dr.,Major, etc</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="firstName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="middleName" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Middle name(s) or initial(s)</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="lastName" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Contains the non-chosen or inherited name. Also known as a person's last name in the Western context.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InternalException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reason" type="xsd:string" />
+          <xsd:element minOccurs="0" name="code" type="xsd:string" />
+          <xsd:element minOccurs="0" name="details" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyUser">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PlanSpecCharacterstic">
+        <xsd:annotation>
+          <xsd:documentation />
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PlanSpecification">
+        <xsd:annotation>
+          <xsd:documentation />
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="description" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:int" />
+          <xsd:element minOccurs="0" name="serviceType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="subType" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PlanSpecCharacteristic" type="xsd_1:PlanSpecCharacterstic" />
+          <xsd:element minOccurs="0" name="ServiceSpecification" type="xsd_1:ServiceSpecification" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Product">
+        <xsd:annotation>
+          <xsd:documentation>A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contractRefNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="productStatus" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>The condition of the product, such as planned, designed, activated, disconnected.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="alias" type="xsd:string" />
+          <xsd:element minOccurs="0" name="productStatusDescription" type="xsd:string" />
+          <xsd:element minOccurs="0" name="activationDate" type="xsd:string" />
+          <xsd:element minOccurs="0" name="customAttribute" type="xsd_2:AttributeValuePair" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="xsd_1:Identifier" />
+          <xsd:element minOccurs="0" name="ProductRelationship" type="xsd_1:ProductRelationship" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Service" type="xsd_1:Service" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="BusinessInteractionType" type="xsd_1:BusinessInteractionType" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductCharacteristic" type="xsd_1:ProductCharacteristic" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductInvolvementRole" type="xsd_1:ProductInvolvementRole" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductOffering" type="xsd_1:ProductOffering" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="customerAccount" type="xsd_1:CustomerAccount" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="TroubleTicket" type="xsd_1:TroubleTicket" />
+          <xsd:element minOccurs="0" name="billingType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="SpecialCallers" type="xsd_1:Identifier" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductCharacteristic">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" type="xsd:string" />
+          <xsd:element minOccurs="0" name="unitOfMeasure" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductInvolvementRole">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="description" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" name="alias" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductOffering">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Product Offering Catalog ID</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contractId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="customAttribute" type="xsd_2:AttributeValuePair" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductRelationship">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="specificationId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Identifier" type="xsd_1:Identifier" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SalesChannel">
+        <xsd:annotation>
+          <xsd:documentation>A means by which a ServiceProvider makes available and sells ProductOfferings to the market. SalesChannels include DirectSalesForce, SalesAgents, TeleMarketers, and AlternateChannels.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Service">
+        <xsd:annotation>
+          <xsd:documentation>This is an abstract base class for defining the Service hierarchy. All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService.
+
+ 
+
+Services are defined as being tightly bound to Products. A Product defines the context of the Service, Service and its related entities (e.g., ServiceSpecification, ServiceRole, and so forth) are related to entities in the Resource, Product, and other domains through a set of relationships.
+
+ 
+
+A Service represents the object that will be instantiated. Each Service instance can be different; therefore, Service is limited to owning just the changeable attributes, methods, relationships, and constraints that can be instantiated. The invariant attributes, methods, relationships, and constraints that can be instantiated are defined by a ServiceSpecification.
+
+ 
+
+The purpose of this entity is twofold. First, it is used to define attributes, methods, and relationships that are common to all Services. Second, it provides a convenient point to define how Services interact with other parts business entities.
+
+ 
+
+Service is a first-class entity, inheriting directly from ManagedEntity. It is therefore a sibling with Resource, Product, and other first-class entities. Note that the CIM models Service as a subclass of LogicalElement, which is a subclass of ManagedSystemElement, which is a subclass of ManagedElement (which is equivalent to ManagedEntity).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="activationDate" type="xsd:date" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="customAttribute" type="xsd_2:AttributeValuePair" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="xsd_1:Identifier" />
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" name="startMode" type="xsd:integer">
+            <xsd:annotation>
+              <xsd:documentation>This attribute is an enumerated integer that indicates how the Service is started. Values include:
+
+ 0: Unknown
+ 1: Automatically by the managed environment
+ 2: Automatically by the owning device
+ 3: Manually by the Provider of the Service
+ 4: Manually by a Customer of the Provider
+ 5: Any of the above
+</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="activationPrice" type="xsd:float" />
+          <xsd:element minOccurs="0" name="lastRenewedDate" type="xsd:date" />
+          <xsd:element minOccurs="0" name="lastRenewedPrice" type="xsd:float" />
+          <xsd:element minOccurs="0" name="nextRenewalDate" type="xsd:date" />
+          <xsd:element minOccurs="0" name="nextRenewalPrice" type="xsd:float" />
+          <xsd:element minOccurs="0" name="requestedDate" type="xsd:date" />
+          <xsd:element minOccurs="0" name="lastOperation" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lastPaymentStatus" type="xsd:string" />
+          <xsd:element minOccurs="0" name="graceExpiryDate" type="xsd:date" />
+          <xsd:element minOccurs="0" name="suspensionExpiryDate" type="xsd:date" />
+          <xsd:element minOccurs="0" name="deactivationDate" type="xsd:date" />
+          <xsd:element minOccurs="0" name="comment" type="xsd:string" />
+          <xsd:element minOccurs="0" name="eligibleForBalanceCheck" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="serviceStatusDescription" type="xsd:string" />
+          <xsd:element minOccurs="0" name="SalesChannel" type="xsd_1:SalesChannel" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ServiceFeature" type="xsd_1:ServiceFeature" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Product" type="xsd_1:Product" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PlanSpecification" type="xsd_1:PlanSpecification" />
+          <xsd:element minOccurs="0" name="ServiceSpecification" type="xsd_1:ServiceSpecification" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="serviceCharacteristic" type="xsd_1:ServiceCharacteristic" />
+          <xsd:element minOccurs="0" name="consentDetails" type="xsd_1:Time" />
+          <xsd:element minOccurs="0" name="GifterDetails" type="xsd_1:Identifier" />
+          <xsd:element minOccurs="0" name="ServiceRelationship" type="xsd_1:ServiceRelationship" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="action" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ServiceCharacteristic">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ServiceFeature">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="xsd_1:Service" />
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ServiceRelationship">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="specificationId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="xsd_1:Identifier" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ServiceSpecRelationship">
+        <xsd:sequence>
+          <xsd:element name="serviceSpecId1" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="serviceSpecification" type="xsd_1:ServiceSpecification" />
+          <xsd:element name="serviceSpecId2" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ServiceSpecification">
+        <xsd:annotation>
+          <xsd:documentation>This is an abstract base class for defining the ServiceSpecification hierarchy. All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService. However, each instance of a Service is made up of changeable as well as invariant attributes, methods, relationships and constraints. A ServiceSpecification defines the invariant characteristics of a Service. It can be conceptually thought of as a template that different Service instances can be instantiated from. Each of these Service instances will have the same invariant characteristics. However, the other characteristics of the instantiated Service will be specific to each instance.
+
+ 
+
+This class can be thought of as a template, which represents a generic specification for implementing a particular type of Service. A ServiceSpecification may consist of other ServiceSpecifications supplied together as a collection.  Members of the collection may be offered individually or collectively.  ServiceSpecifications may also exist within groupings, such as within a Product.
+
+ 
+
+ServiceSpecification inherits from Specification, which inherits from ManagedEntity.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="isOptional" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="isProvisioningRequired" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isActivationRequired" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" name="serviceType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ServiceSpecRelationship" type="xsd_1:ServiceSpecRelationship" />
+          <xsd:element minOccurs="0" name="subType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Time">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TroubleTicket">
+        <xsd:annotation>
+          <xsd:documentation>A record used for reporting and managing the resolution of resource problems.
+
+
+</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="description" type="xsd:string" />
+          <xsd:element minOccurs="0" name="estimatedResolutionTime" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="troubleDetectionDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="type" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="retrieveDigitalServiceConfigurationRequest">
+    <wsdl:part name="parameters" element="ns0:retrieveDigitalServiceConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="retrieveDigitalServiceConfigurationResponse">
+    <wsdl:part name="parameters" element="ns0:retrieveDigitalServiceConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveDigitalServiceConfigurationException">
+    <wsdl:part name="retrieveDigitalServiceConfigurationException" element="ns0:retrieveDigitalServiceConfigurationException" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCustomerServiceConfigurationRequest">
+    <wsdl:part name="parameters" element="ns0:retrieveCustomerServiceConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCustomerServiceConfigurationResponse">
+    <wsdl:part name="parameters" element="ns0:retrieveCustomerServiceConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCustomerServiceConfigurationException">
+    <wsdl:part name="retrieveCustomerServiceConfigurationException" element="ns0:retrieveCustomerServiceConfigurationException" />
+  </wsdl:message>
+  <wsdl:portType name="CustomerConfigurationInquiryV0dot6">
+    <wsdl:operation name="retrieveDigitalServiceConfiguration">
+      <wsdl:input message="tns:retrieveDigitalServiceConfigurationRequest" />
+      <wsdl:output message="tns:retrieveDigitalServiceConfigurationResponse" />
+      <wsdl:fault name="retrieveDigitalServiceConfigurationException" message="tns:retrieveDigitalServiceConfigurationException" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveCustomerServiceConfiguration">
+      <wsdl:input message="tns:retrieveCustomerServiceConfigurationRequest" />
+      <wsdl:output message="tns:retrieveCustomerServiceConfigurationResponse" />
+      <wsdl:fault name="retrieveCustomerServiceConfigurationException" message="tns:retrieveCustomerServiceConfigurationException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerConfigurationInquiryV0dot6Endpoint0Binding" type="tns:CustomerConfigurationInquiryV0dot6">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="retrieveDigitalServiceConfiguration">
+      <soap:operation soapAction="/retrieveDigitalServiceConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="retrieveDigitalServiceConfigurationException">
+        <soap:fault use="literal" name="retrieveDigitalServiceConfigurationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveCustomerServiceConfiguration">
+      <soap:operation soapAction="/retrieveCustomerServiceConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="retrieveCustomerServiceConfigurationException">
+        <soap:fault use="literal" name="retrieveCustomerServiceConfigurationException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerConfigurationInquiryV0dot6-service0">
+    <wsdl:port name="CustomerConfigurationInquiryV0dot6Endpoint0" binding="tns:CustomerConfigurationInquiryV0dot6Endpoint0Binding">
+      <soap:address location="http://10.128.36.130:10186/CustomerConfigurationInquiryV0dot5" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

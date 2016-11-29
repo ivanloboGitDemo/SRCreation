@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B8DB216-5771-47C5-991F-03C8238228AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LocoBuzz.API.Business</RootNamespace>
+    <AssemblyName>LocoBuzz.API.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerService.cs" />
+    <Compile Include="Interfaces\JioFactory.cs" />
+    <Compile Include="JioFactoryBase.cs" />
+    <Compile Include="JioFactoryManager.cs" />
+    <Compile Include="JioFactorySingleton.cs" />
+    <Compile Include="JioServiceFacade.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CustomerConfigurationInquiry\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CustomerProblemManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CustomerProfileManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MDMReferenceData\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SimService.cs" />
+    <Compile Include="SRService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerConfigurationInquiry\LocoBuzz.API.Business.CustomerConfigurationInquiry.RetrieveCustomerServiceConfigurationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerConfigurationInquiry\LocoBuzz.API.Business.CustomerConfigurationInquiry.retrieveCustomerServiceConfigurationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerConfigurationInquiry\LocoBuzz.API.Business.CustomerConfigurationInquiry.RetrieveDigitalServiceConfigurationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerConfigurationInquiry\LocoBuzz.API.Business.CustomerConfigurationInquiry.retrieveDigitalServiceConfigurationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerConfigurationInquiry\Untitled.wsdl" />
+    <None Include="Service References\CustomerProblemManagement\LocoBuzz.API.Business.CustomerProblemManagement.CreateCustomerProblemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProblemManagement\LocoBuzz.API.Business.CustomerProblemManagement.createCustomerProblemResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProblemManagement\LocoBuzz.API.Business.CustomerProblemManagement.listCustomerProblemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProblemManagement\LocoBuzz.API.Business.CustomerProblemManagement.listCustomerProblemResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProblemManagement\LocoBuzz.API.Business.CustomerProblemManagement.retrieveCustomerProblemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProblemManagement\LocoBuzz.API.Business.CustomerProblemManagement.retrieveCustomerProblemResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProblemManagement\LocoBuzz.API.Business.CustomerProblemManagement.updateCustomerProblemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProblemManagement\LocoBuzz.API.Business.CustomerProblemManagement.updateCustomerProblemResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProblemManagement\Untitled.wsdl" />
+    <None Include="Service References\CustomerProfileManagement\LocoBuzz.API.Business.CustomerProfileManagement.CreateCustomerProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProfileManagement\LocoBuzz.API.Business.CustomerProfileManagement.createCustomerProfileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProfileManagement\LocoBuzz.API.Business.CustomerProfileManagement.FindCustomerProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProfileManagement\LocoBuzz.API.Business.CustomerProfileManagement.findCustomerProfileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProfileManagement\LocoBuzz.API.Business.CustomerProfileManagement.RetrieveCustomerProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProfileManagement\LocoBuzz.API.Business.CustomerProfileManagement.retrieveCustomerProfileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProfileManagement\LocoBuzz.API.Business.CustomerProfileManagement.UpdateCustomerProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProfileManagement\LocoBuzz.API.Business.CustomerProfileManagement.updateCustomerProfileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CustomerProfileManagement\Untitled.wsdl" />
+    <None Include="Service References\MDMReferenceData\LocoBuzz.API.Business.MDMReferenceData.LookupHierarchicalValueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MDMReferenceData\LocoBuzz.API.Business.MDMReferenceData.lookupHierarchicalValueResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MDMReferenceData\LocoBuzz.API.Business.MDMReferenceData.lookupParentValueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MDMReferenceData\LocoBuzz.API.Business.MDMReferenceData.lookupRelatedValueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MDMReferenceData\LocoBuzz.API.Business.MDMReferenceData.LookUpValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MDMReferenceData\LocoBuzz.API.Business.MDMReferenceData.LookupValueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MDMReferenceData\LocoBuzz.API.Business.MDMReferenceData.lookupValueResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MDMReferenceData\LocoBuzz.API.Business.MDMReferenceData.TranslateValueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MDMReferenceData\LocoBuzz.API.Business.MDMReferenceData.translateValueResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MDMReferenceData\Untitled.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CustomerConfigurationInquiry\" />
+    <WCFMetadataStorage Include="Service References\CustomerProblemManagement\" />
+    <WCFMetadataStorage Include="Service References\CustomerProfileManagement\" />
+    <WCFMetadataStorage Include="Service References\MDMReferenceData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MDMReferenceData\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MDMReferenceData\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MDMReferenceData\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerConfigurationInquiry\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerConfigurationInquiry\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerConfigurationInquiry\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerProfileManagement\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerProfileManagement\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerProfileManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerProblemManagement\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerProblemManagement\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CustomerProblemManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LocoBuzz.API.BusinessModels\LocoBuzz.API.BusinessModels.csproj">
+      <Project>{011496f2-c7d9-496c-a902-f4b337bbf674}</Project>
+      <Name>LocoBuzz.API.BusinessModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LocoBuzz.API.Common\LocoBuzz.API.Common.csproj">
+      <Project>{2e912a9e-b37a-433e-8898-c81235b6b125}</Project>
+      <Name>LocoBuzz.API.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

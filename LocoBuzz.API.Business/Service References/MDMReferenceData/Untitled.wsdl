@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.jio.ril.com/information/DataTypes/ReferenceDataInquiry/" xmlns:tns="http://xmlns.example.com/1383718943481" xmlns:ns0="http://www.jio.ril.com/integration/services/common/ReferenceDataInquiry/" xmlns:ns3="http://www.jio.ril.com/integration/services/common/schema/ReferenceDataInquiry/" xmlns:ns1="http://www.jio.ril.com/information/CanonicalDataModel/ReferenceDataInquiry/" name="Untitled" targetNamespace="http://xmlns.example.com/1383718943481" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd_2="http://www.jio.ril.com/information/DataTypes/ReferenceDataInquiry/" xmlns:xsd_1="http://www.jio.ril.com/information/CanonicalDataModel/ReferenceDataInquiry/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/information/CanonicalDataModel/ReferenceDataInquiry/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.jio.ril.com/information/DataTypes/ReferenceDataInquiry/" />
+      <xsd:complexType name="DataRecord">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="totalRecords" type="xsd:long" />
+          <xsd:element minOccurs="0" name="timePeriod" type="xsd_2:TimePeriod" />
+          <xsd:element minOccurs="0" name="pagingSize" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="offsetValue" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InternalException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reason" type="xsd:string" />
+          <xsd:element minOccurs="0" name="code" type="xsd:string" />
+          <xsd:element minOccurs="0" name="details" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LookUpValue">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ofType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lovType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lovName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lovDesc" type="xsd:string" />
+          <xsd:element minOccurs="0" name="system" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lovCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="LookUpValue" type="xsd_1:LookUpValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd_1="http://www.jio.ril.com/information/DataTypes/ReferenceDataInquiry/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/information/DataTypes/ReferenceDataInquiry/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:complexType name="TimePeriod">
+        <xsd:annotation>
+          <xsd:documentation>A base / value business entity used to represent a period of time, between two timepoints</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="startDateTime" nillable="true" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>An instant of time, starting at the TimePeriod</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="endDateTime" nillable="true" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:documentation>An instant of time, ending at the TimePeriod</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd_2="http://www.jio.ril.com/information/CanonicalDataModel/ReferenceDataInquiry/" xmlns:xsd_1="http://www.jio.ril.com/integration/services/common/schema/ReferenceDataInquiry/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.jio.ril.com/integration/services/common/schema/ReferenceDataInquiry/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.jio.ril.com/information/CanonicalDataModel/ReferenceDataInquiry/" />
+      <xsd:complexType name="LookupHierarchicalValueRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="lookupValue" type="xsd_2:LookUpValue" />
+          <xsd:element minOccurs="0" name="dataRecord" type="xsd_2:DataRecord" />
+          <xsd:element minOccurs="0" name="parentLookupValue" type="xsd_2:LookUpValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LookupHierarchicalValueResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="dataRecord" type="xsd_2:DataRecord" />
+          <xsd:element minOccurs="0" name="lookupValue" type="xsd_2:LookUpValue" />
+          <xsd:element minOccurs="0" name="parentLookupValue" type="xsd_2:LookUpValue" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="valueList" type="xsd_2:LookUpValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LookupParentValueRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="lookupValue" type="xsd_2:LookUpValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LookupParentValueResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="valueList" type="xsd_2:LookUpValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LookupRelatedValueRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="lookupValue" type="xsd_2:LookUpValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LookupRelatedValueResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="lookupValue" type="xsd_2:LookUpValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LookupValueRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="lookupValue" type="xsd_2:LookUpValue" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="valueList" type="xsd_2:LookUpValue" />
+          <xsd:element minOccurs="0" name="dataRecord" type="xsd_2:DataRecord" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LookupValueResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="lookupValue" type="xsd_2:LookUpValue" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="valueList" type="xsd_2:LookUpValue" />
+          <xsd:element minOccurs="0" name="dataRecord" type="xsd_2:DataRecord" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TranslateValueRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="lookupValue" type="xsd_2:LookUpValue" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="valueList" type="xsd_2:LookUpValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TranslateValueResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="lookupValue" type="xsd_2:LookUpValue" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="valueList" type="xsd_2:LookUpValue" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.jio.ril.com/integration/services/common/ReferenceDataInquiry/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.jio.ril.com/information/CanonicalDataModel/ReferenceDataInquiry/" />
+      <xs:import namespace="http://www.jio.ril.com/integration/services/common/schema/ReferenceDataInquiry/" />
+      <xs:complexType name="InternalExceptionCollection">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="InternalExceptionElement" type="ns1:InternalException" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="lookupHierarchicalValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="lookupHierarchicalValueRequest" type="ns3:LookupHierarchicalValueRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lookupHierarchicalValueException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="lookupHierarchicalValueResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="lookupHierarchicalValueResponse" type="ns3:LookupHierarchicalValueResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lookupParentValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="lookupParentValueRequest" type="ns3:LookupParentValueRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lookupParentValueException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="lookupParentValueResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="lookupParentValueResponse" type="ns3:LookupParentValueResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lookupRelatedValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="lookupRelatedValueRequest" type="ns3:LookupRelatedValueRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lookupRelatedValueException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="lookupRelatedValueResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="lookupRelatedValueResponse" type="ns3:LookupRelatedValueResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lookupValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="lookupValueRequest" type="ns3:LookupValueRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lookupValueException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="lookupValueResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="lookupValueResponse" type="ns3:LookupValueResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="translateValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="translateValueRequest" type="ns3:TranslateValueRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="translateValueException" type="ns0:InternalExceptionCollection" />
+      <xs:element name="translateValueResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="translateValueResponse" type="ns3:TranslateValueResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="lookupParentValueRequest">
+    <wsdl:part name="parameters" element="ns0:lookupParentValue" />
+  </wsdl:message>
+  <wsdl:message name="lookupParentValueResponse">
+    <wsdl:part name="parameters" element="ns0:lookupParentValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="lookupParentValueException">
+    <wsdl:part name="lookupParentValueException" element="ns0:lookupParentValueException" />
+  </wsdl:message>
+  <wsdl:message name="lookupRelatedValueRequest">
+    <wsdl:part name="parameters" element="ns0:lookupRelatedValue" />
+  </wsdl:message>
+  <wsdl:message name="lookupRelatedValueResponse">
+    <wsdl:part name="parameters" element="ns0:lookupRelatedValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="lookupRelatedValueException">
+    <wsdl:part name="lookupRelatedValueException" element="ns0:lookupRelatedValueException" />
+  </wsdl:message>
+  <wsdl:message name="translateValueRequest">
+    <wsdl:part name="parameters" element="ns0:translateValue" />
+  </wsdl:message>
+  <wsdl:message name="translateValueResponse">
+    <wsdl:part name="parameters" element="ns0:translateValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="translateValueException">
+    <wsdl:part name="translateValueException" element="ns0:translateValueException" />
+  </wsdl:message>
+  <wsdl:message name="lookupHierarchicalValueRequest">
+    <wsdl:part name="parameters" element="ns0:lookupHierarchicalValue" />
+  </wsdl:message>
+  <wsdl:message name="lookupHierarchicalValueResponse">
+    <wsdl:part name="parameters" element="ns0:lookupHierarchicalValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="lookupHierarchicalValueException">
+    <wsdl:part name="lookupHierarchicalValueException" element="ns0:lookupHierarchicalValueException" />
+  </wsdl:message>
+  <wsdl:message name="lookupValueRequest">
+    <wsdl:part name="parameters" element="ns0:lookupValue" />
+  </wsdl:message>
+  <wsdl:message name="lookupValueResponse">
+    <wsdl:part name="parameters" element="ns0:lookupValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="lookupValueException">
+    <wsdl:part name="lookupValueException" element="ns0:lookupValueException" />
+  </wsdl:message>
+  <wsdl:portType name="ReferenceDataInquiryV1dot2">
+    <wsdl:operation name="lookupParentValue">
+      <wsdl:input message="tns:lookupParentValueRequest" />
+      <wsdl:output message="tns:lookupParentValueResponse" />
+      <wsdl:fault name="lookupParentValueException" message="tns:lookupParentValueException" />
+    </wsdl:operation>
+    <wsdl:operation name="lookupRelatedValue">
+      <wsdl:input message="tns:lookupRelatedValueRequest" />
+      <wsdl:output message="tns:lookupRelatedValueResponse" />
+      <wsdl:fault name="lookupRelatedValueException" message="tns:lookupRelatedValueException" />
+    </wsdl:operation>
+    <wsdl:operation name="translateValue">
+      <wsdl:input message="tns:translateValueRequest" />
+      <wsdl:output message="tns:translateValueResponse" />
+      <wsdl:fault name="translateValueException" message="tns:translateValueException" />
+    </wsdl:operation>
+    <wsdl:operation name="lookupHierarchicalValue">
+      <wsdl:input message="tns:lookupHierarchicalValueRequest" />
+      <wsdl:output message="tns:lookupHierarchicalValueResponse" />
+      <wsdl:fault name="lookupHierarchicalValueException" message="tns:lookupHierarchicalValueException" />
+    </wsdl:operation>
+    <wsdl:operation name="lookupValue">
+      <wsdl:input message="tns:lookupValueRequest" />
+      <wsdl:output message="tns:lookupValueResponse" />
+      <wsdl:fault name="lookupValueException" message="tns:lookupValueException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReferenceDataInquiryV1dot2Endpoint1Binding" type="tns:ReferenceDataInquiryV1dot2">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="lookupParentValue">
+      <soap:operation soapAction="/lookupParentValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="lookupParentValueException">
+        <soap:fault use="literal" name="lookupParentValueException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="lookupRelatedValue">
+      <soap:operation soapAction="/lookupRelatedValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="lookupRelatedValueException">
+        <soap:fault use="literal" name="lookupRelatedValueException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="translateValue">
+      <soap:operation soapAction="/translateValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="translateValueException">
+        <soap:fault use="literal" name="translateValueException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="lookupHierarchicalValue">
+      <soap:operation soapAction="/lookupHierarchicalValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="lookupHierarchicalValueException">
+        <soap:fault use="literal" name="lookupHierarchicalValueException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="lookupValue">
+      <soap:operation soapAction="/lookupValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="lookupValueException">
+        <soap:fault use="literal" name="lookupValueException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MDMReferenceDataService.serviceagent">
+    <wsdl:port name="ReferenceDataInquiryV1dot2Endpoint1" binding="tns:ReferenceDataInquiryV1dot2Endpoint1Binding">
+      <soap:address location="http://jnpesb:10135/MDMReferenceDataService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
